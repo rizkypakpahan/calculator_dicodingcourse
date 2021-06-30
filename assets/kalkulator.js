@@ -57,7 +57,17 @@ function performCalculation() {
       parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
   }
 
+  // objek yang akan dikirinkan sebagai argumen fungsi putHistory()
+  const history = {
+    firstNumber: calculator.firstNumber,
+    secondNumber: calculator.secondNumber,
+    operator: calculator.operator,
+    result: result,
+  };
+
+  putHistory();
   calculator.displayNumber = result;
+  renderHistory();
 }
 
 const buttons = document.querySelectorAll(".button");
